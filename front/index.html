@@ -58,75 +58,289 @@
                         </button>
                     </div>
                     <div id="cardsContainer">
-                        <div id="bookCard">
-                            <div id="coverContainer">
+                        <div class="bookCard">
+                            <div class="coverContainer">
                                 <img
                                     src="https://http2.mlstatic.com/D_NQ_NP_600321-MLA75083779746_032024-O.webp"
                                     alt="poster Cien años de soledad"
-                                    id="cover"
+                                    class="cover"
                                 />
                             </div>
-                            <h4 id="title">Cien años de soledad</h4>
-                            <p id="author">García Marquez, Gabriel</p>
-                            <p id="genres">
-                                Novela, Realismo mágica, Ficción, Alta fantasía,
-                                Saga familiar
+                            <h4 class="title">Cien años de soledad</h4>
+                            <p class="author">García Marquez, Gabriel</p>
+                            <p class="genres">
+                                Novela, Romance, Ficción, Fantasía.
                             </p>
-                            <p id="publisher">Editorial Delbolsillo</p>
+                            <p class="publisher">Editorial Delbolsillo</p>
                         </div>
-                        <div id="bookCard">
-                            <div id="coverContainer">
+                        <div class="bookCard">
+                            <div class="coverContainer">
                                 <img
                                     src="https://http2.mlstatic.com/D_NQ_NP_600321-MLA75083779746_032024-O.webp"
                                     alt="poster Cien años de soledad"
-                                    id="cover"
+                                    class="cover"
                                 />
                             </div>
-                            <h4 id="title">Cien años de soledad</h4>
-                            <p id="author">García Marquez, Gabriel</p>
-                            <p id="genres">
-                                Novela, Realismo mágica, Ficción, Alta fantasía,
-                                Saga familiar
+                            <h4 class="title">Cien años de soledad</h4>
+                            <p class="author">García Marquez, Gabriel</p>
+                            <p class="genres">
+                                Novela, Romance, Ficción, Fantasía.
                             </p>
-                            <p id="publisher">Editorial Delbolsillo</p>
+                            <p class="publisher">Editorial Delbolsillo</p>
                         </div>
-                        <div id="bookCard">
-                            <div id="coverContainer">
+                        <div class="bookCard">
+                            <div class="coverContainer">
                                 <img
                                     src="https://http2.mlstatic.com/D_NQ_NP_600321-MLA75083779746_032024-O.webp"
                                     alt="poster Cien años de soledad"
-                                    id="cover"
+                                    class="cover"
                                 />
                             </div>
-                            <h4 id="title">Cien años de soledad</h4>
-                            <p id="author">García Marquez, Gabriel</p>
-                            <p id="genres">
-                                Novela, Realismo mágica, Ficción, Alta fantasía,
-                                Saga familiar
+                            <h4 class="title">Cien años de soledad</h4>
+                            <p class="author">García Marquez, Gabriel</p>
+                            <p class="genres">
+                                Novela, Romance, Ficción, Fantasía.
                             </p>
-                            <p id="publisher">Editorial Delbolsillo</p>
+                            <p class="publisher">Editorial Delbolsillo</p>
                         </div>
-                        <div id="bookCard">
-                            <div id="coverContainer">
+                        <div class="bookCard">
+                            <div class="coverContainer">
                                 <img
                                     src="https://http2.mlstatic.com/D_NQ_NP_600321-MLA75083779746_032024-O.webp"
                                     alt="poster Cien años de soledad"
-                                    id="cover"
+                                    class="cover"
                                 />
                             </div>
-                            <h4 id="title">Cien años de soledad</h4>
-                            <p id="author">García Marquez, Gabriel</p>
-                            <p id="genres">
-                                Novela, Realismo mágica, Ficción, Alta fantasía,
-                                Saga familiar
+                            <h4 class="title">Cien años de soledad</h4>
+                            <p class="author">García Marquez, Gabriel</p>
+                            <p class="genres">
+                                Novela, Romance, Ficción, Fantasía.r
                             </p>
-                            <p id="publisher">Editorial Delbolsillo</p>
+                            <p class="publisher">Editorial Delbolsillo</p>
                         </div>
                     </div>
                 </article>
             </section>
             <section id="formAdd">
-                <article id="formAddContainer"></article>
+                <h2>Agrega más libros a nuestra librería!!!</h2>
+                <p>
+                    Si deseas sumar algún libro por favor completa el
+                    formulario. (Todos los campos son requeridos)
+                </p>
+                <form action="#" method="post" id="formBook">
+                    <div id="formAddContainer">
+                        <div id="formLeft">
+                            <div>
+                                <label for="title">Título del libro</label
+                                ><br />
+                                <input
+                                    type="text"
+                                    name="title"
+                                    id="titleForm"
+                                    class="inputKeyboard"
+                                />
+                            </div>
+                            <div>
+                                <label for="year">Año de Publicación</label
+                                ><br />
+                                <input
+                                    type="number"
+                                    name="year"
+                                    id="yearForm"
+                                    class="inputKeyboard"
+                                />
+                            </div>
+                            <div>
+                                <label for="author">Autor/res</label><br />
+                                <input
+                                    type="text"
+                                    name="author"
+                                    id="authorForm"
+                                    class="inputKeyboard"
+                                />
+                            </div>
+                            <div>
+                                <label for="publisher">Editorial</label><br />
+                                <input
+                                    type="text"
+                                    name="publisher"
+                                    id="publisherForm"
+                                    class="inputKeyboard"
+                                />
+                            </div>
+                        </div>
+                        <div id="formRight">
+                            <span
+                                >Selecciona los generos a los que
+                                pertenece</span
+                            >
+                            <div id="checkboxContainer">
+                                <div class="checkGroup">
+                                    <div>
+                                        <input
+                                            type="checkbox"
+                                            name="genre[]"
+                                            id="novel"
+                                            value="Novel"
+                                        />
+                                        <label for="novel"
+                                            ><span>Novela</span></label
+                                        >
+                                    </div>
+                                    <div>
+                                        <input
+                                            type="checkbox"
+                                            name="genre[]"
+                                            id="romance"
+                                            value="Romance"
+                                        />
+                                        <label for="romance"
+                                            ><span>Romance</span></label
+                                        >
+                                    </div>
+                                </div>
+                                <div class="checkGroup">
+                                    <div>
+                                        <input
+                                            type="checkbox"
+                                            name="genre[]"
+                                            id="fiction"
+                                            value="Fiction"
+                                        />
+                                        <label for="fiction"
+                                            ><span>Ficción</span></label
+                                        >
+                                    </div>
+                                    <div>
+                                        <input
+                                            type="checkbox"
+                                            name="genre[]"
+                                            id="fantasy"
+                                            value="Fantasy"
+                                        />
+                                        <label for="fantasy"
+                                            ><span>Fantasía</span></label
+                                        >
+                                    </div>
+                                </div>
+                                <div class="checkGroup">
+                                    <div>
+                                        <input
+                                            type="checkbox"
+                                            name="genre[]"
+                                            id="gastronomy"
+                                            value="Gastronomy"
+                                        />
+                                        <label for="gastronomy"
+                                            ><span>Gastronomía</span></label
+                                        >
+                                    </div>
+                                    <div>
+                                        <input
+                                            type="checkbox"
+                                            name="genre[]"
+                                            id="art"
+                                            value="Art"
+                                        />
+                                        <label for="art"
+                                            ><span>Arte</span></label
+                                        >
+                                    </div>
+                                </div>
+                                <div class="checkGroup">
+                                    <div>
+                                        <input
+                                            type="checkbox"
+                                            name="genre[]"
+                                            id="adventure"
+                                            value="Adventure"
+                                        />
+                                        <label for="adventure"
+                                            ><span>Aventura</span></label
+                                        >
+                                    </div>
+                                    <div>
+                                        <input
+                                            type="checkbox"
+                                            name="genre[]"
+                                            id="terror"
+                                            value="Terror"
+                                        />
+                                        <label for="terror"
+                                            ><span>Terror</span></label
+                                        >
+                                    </div>
+                                </div>
+                                <div class="checkGroup">
+                                    <div>
+                                        <input
+                                            type="checkbox"
+                                            name="genre[]"
+                                            id="poetry"
+                                            value="Poetry"
+                                        />
+                                        <label for="poetry"
+                                            ><span>Poesía</span></label
+                                        >
+                                    </div>
+                                    <div>
+                                        <input
+                                            type="checkbox"
+                                            name="genre[]"
+                                            id="selfHelp"
+                                            value="Self-Help"
+                                        />
+                                        <label for="selfHelp"
+                                            ><span>Autoayuda</span></label
+                                        >
+                                    </div>
+                                </div>
+                                <div class="checkGroup">
+                                    <div>
+                                        <input
+                                            type="checkbox"
+                                            name="genre[]"
+                                            id="psychology"
+                                            value="Psychology"
+                                        />
+                                        <label for="psychology"
+                                            ><span>Psicología</span></label
+                                        >
+                                    </div>
+                                    <div>
+                                        <input
+                                            type="checkbox"
+                                            name="genre[]"
+                                            id="finance"
+                                            value="Finance"
+                                        />
+                                        <label for="finance"
+                                            ><span>Finanzas</span></label
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="lastItem">
+                                <label for="poster"
+                                    >Imagen de Portada(URL)</label
+                                ><br />
+                                <input
+                                    type="url"
+                                    name="cover"
+                                    id="coverForm"
+                                    class="inputKeyboard"
+                                    placeholder="https://myposterofmovie.com/poster1"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="buttonContainer">
+                        <button type="submit" id="submit">Agregar Libro</button>
+                        <button type="button" id="reset">
+                            Limpiar los campos
+                        </button>
+                    </div>
+                </form>
             </section>
             <section id="formReservation">
                 <article id="formReservationContainer"></article>
