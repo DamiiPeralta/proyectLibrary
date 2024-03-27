@@ -1,0 +1,66 @@
+#books {
+    width: 100vw;
+    display: none;
+    #booksContainer {
+        width: 85%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        #searchContainer {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            padding-bottom: 2rem;
+            input {
+                width: 20rem;
+                padding: 0.5rem 1rem;
+                font-family: $titles;
+                border-radius: 20px;
+                margin-right: 1rem;
+                font-size: 1rem;
+                border: 1px solid $coral;
+            }
+            button {
+                width: 3rem;
+                background-color: $coral;
+                color: $white;
+                border-radius: 3rem;
+                font-size: 1rem;
+            }
+        }
+        #cardsContainer {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            #bookCard {
+                border-radius: 20px;
+                width: 24%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                #coverContainer {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    #cover {
+                        width: 60%;
+                    }
+                }
+                #title {
+                    font-size: 1.5rem;
+                    font-weight: 800;
+                    color: $coral;
+                    text-shadow: 1px 1px 1px $black;
+                }
+                p {
+                    text-align: center;
+                    padding-bottom: 0.5rem;
+                }
+            }
+        }
+    }
+}

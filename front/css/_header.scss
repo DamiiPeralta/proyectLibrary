@@ -1,0 +1,32 @@
+header {
+    width: 100%;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+        width: 30%;
+        margin: 0 auto;
+        font-family: $titles;
+        font-size: 4rem;
+        padding-left: 3rem;
+        color: $green;
+        text-shadow: 2px 2px 2px $black;
+    }
+    nav {
+        width: 60%;
+        ul {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            li {
+                a {
+                    font-weight: 600;
+                    font-size: 1.5rem;
+                    text-decoration: none;
+                    color: $black;
+                }
+            }
+        }
+    }
+}

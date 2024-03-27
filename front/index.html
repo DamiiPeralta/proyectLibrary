@@ -1,11 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+            src="https://kit.fontawesome.com/115266e0be.js"
+            crossorigin="anonymous"
+        ></script>
+        <link rel="stylesheet" href="./css/style.css" />
+        <title>BiblioTech</title>
+    </head>
+    <body>
+        <header>
+            <h1>Bibliotech</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#home">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="#books">Explorá</a>
+                    </li>
+                    <li>
+                        <a href="#formAdd">Agregá</a>
+                    </li>
+                    <li>
+                        <a href="#formReservation"> Reservá</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="home">
+                <article>
+                    <div id="textContainer">
+                        <h2>¡Hola! bienvenido a BiblioTech...</h2>
+                        <p>
+                            Somos un amplio repositorio de libros, podés
+                            ayudarnos a ampliar nuestro repositorio, o reservar
+                            algún libro que estes interesado en leer
+                        </p>
+                    </div>
+                    <div id="imgContainer">
+                        <img
+                            src="./assets/img/undraw_bibliophile_re_xarc (1).svg"
+                            alt="chica con libro"
+                        />
+                    </div>
+                </article>
+            </section>
+            <section id="books">
+                <article id="booksContainer">
+                    <div id="searchContainer">
+                        <input type="text" placeholder="Buscar..." />
+                        <button>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    <div id="cardsContainer">
+                        <div id="bookCard">
+                            <div id="coverContainer">
+                                <img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_600321-MLA75083779746_032024-O.webp"
+                                    alt="poster Cien años de soledad"
+                                    id="cover"
+                                />
+                            </div>
+                            <h4 id="title">Cien años de soledad</h4>
+                            <p id="author">García Marquez, Gabriel</p>
+                            <p id="genres">
+                                Novela, Realismo mágica, Ficción, Alta fantasía,
+                                Saga familiar
+                            </p>
+                            <p id="publisher">Editorial Delbolsillo</p>
+                        </div>
+                        <div id="bookCard">
+                            <div id="coverContainer">
+                                <img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_600321-MLA75083779746_032024-O.webp"
+                                    alt="poster Cien años de soledad"
+                                    id="cover"
+                                />
+                            </div>
+                            <h4 id="title">Cien años de soledad</h4>
+                            <p id="author">García Marquez, Gabriel</p>
+                            <p id="genres">
+                                Novela, Realismo mágica, Ficción, Alta fantasía,
+                                Saga familiar
+                            </p>
+                            <p id="publisher">Editorial Delbolsillo</p>
+                        </div>
+                        <div id="bookCard">
+                            <div id="coverContainer">
+                                <img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_600321-MLA75083779746_032024-O.webp"
+                                    alt="poster Cien años de soledad"
+                                    id="cover"
+                                />
+                            </div>
+                            <h4 id="title">Cien años de soledad</h4>
+                            <p id="author">García Marquez, Gabriel</p>
+                            <p id="genres">
+                                Novela, Realismo mágica, Ficción, Alta fantasía,
+                                Saga familiar
+                            </p>
+                            <p id="publisher">Editorial Delbolsillo</p>
+                        </div>
+                        <div id="bookCard">
+                            <div id="coverContainer">
+                                <img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_600321-MLA75083779746_032024-O.webp"
+                                    alt="poster Cien años de soledad"
+                                    id="cover"
+                                />
+                            </div>
+                            <h4 id="title">Cien años de soledad</h4>
+                            <p id="author">García Marquez, Gabriel</p>
+                            <p id="genres">
+                                Novela, Realismo mágica, Ficción, Alta fantasía,
+                                Saga familiar
+                            </p>
+                            <p id="publisher">Editorial Delbolsillo</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <section id="formAdd">
+                <article id="formAddContainer"></article>
+            </section>
+            <section id="formReservation">
+                <article id="formReservationContainer"></article>
+            </section>
+            <section id="modalBook"></section>
+        </main>
+        <footer>
+            <div id="socialMedia">
+                <a href="#">Github</a>
+            </div>
+            <div id="license">
+                &copy; 2024 DamiiPeralta. Todos los Derechos Reservados.
+            </div>
+        </footer>
+    </body>
 </html>

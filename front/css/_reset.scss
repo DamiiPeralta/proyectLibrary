@@ -1,0 +1,85 @@
+// Reset básico
+
+// Reset de márgenes y relleno
+html,
+body,
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+// Establecer el tamaño de fuente base y la familia de fuente
+html {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+// Eliminar la decoración de lista
+ul,
+ol {
+    list-style: none;
+}
+
+// Establecer el borde a cero
+img,
+iframe,
+embed,
+object,
+video {
+    border: 0;
+}
+
+// Establecer la anchura al 100% por defecto
+img,
+iframe,
+embed,
+object,
+video,
+input[type='image'],
+input[type='video'],
+input[type='embed'],
+object[type='image'],
+object[type='video'],
+object[type='embed'] {
+    width: 100%;
+}
+
+// Reset de encabezados
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+// Eliminar estilos de enlaces
+a {
+    text-decoration: none;
+}
+
+// Reset de formularios
+input,
+button,
+textarea,
+select {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    font-family: inherit;
+}
+
+// Establecer el cursor predeterminado
+body {
+    cursor: default;
+}
+
+// Eliminar decoración de texto subrayado por defecto
+u {
+    text-decoration: none;
+}

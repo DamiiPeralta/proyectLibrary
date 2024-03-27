@@ -1,0 +1,30 @@
+#home {
+    width: 100%;
+    display: none;
+    article {
+        height: 75vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        #textContainer {
+            width: 40%;
+            padding-left: 10rem;
+            text-align: left;
+            h2 {
+                font-family: $titles;
+                font-size: 2rem;
+                color: $coral;
+                text-shadow: 1px 1px 1px $black;
+            }
+            p {
+                font-size: 1.2rem;
+            }
+        }
+        #imgContainer {
+            width: 40%;
+            img {
+                width: 60%;
+            }
+        }
+    }
+}

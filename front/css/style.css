@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Laila:wght@500;600;700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Laila:wght@500;600;700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img,
+iframe,
+embed,
+object,
+video {
+  border: 0;
+}
+
+img,
+iframe,
+embed,
+object,
+video,
+input[type=image],
+input[type=video],
+input[type=embed],
+object[type=image],
+object[type=video],
+object[type=embed] {
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+button,
+textarea,
+select {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+body {
+  cursor: default;
+}
+
+u {
+  text-decoration: none;
+}
+
+body {
+  width: 100vw;
+  font-family: "Nunito", sans-serif;
+  background-color: #ffefe8;
+  color: #050505;
+}
+
+header {
+  width: 100%;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 {
+  width: 30%;
+  margin: 0 auto;
+  font-family: "Laila", serif;
+  font-size: 4rem;
+  padding-left: 3rem;
+  color: #236b68;
+  text-shadow: 2px 2px 2px #050505;
+}
+header nav {
+  width: 60%;
+}
+header nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+header nav ul li a {
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #050505;
+}
+
+#home {
+  width: 100%;
+  display: none;
+}
+#home article {
+  height: 75vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#home article #textContainer {
+  width: 40%;
+  padding-left: 10rem;
+  text-align: left;
+}
+#home article #textContainer h2 {
+  font-family: "Laila", serif;
+  font-size: 2rem;
+  color: #d55249;
+  text-shadow: 1px 1px 1px #050505;
+}
+#home article #textContainer p {
+  font-size: 1.2rem;
+}
+#home article #imgContainer {
+  width: 40%;
+}
+#home article #imgContainer img {
+  width: 60%;
+}
+
+#books {
+  width: 100vw;
+  display: none;
+}
+#books #booksContainer {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+#books #booksContainer #searchContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 2rem;
+}
+#books #booksContainer #searchContainer input {
+  width: 20rem;
+  padding: 0.5rem 1rem;
+  font-family: "Laila", serif;
+  border-radius: 20px;
+  margin-right: 1rem;
+  font-size: 1rem;
+  border: 1px solid #d55249;
+}
+#books #booksContainer #searchContainer button {
+  width: 3rem;
+  background-color: #d55249;
+  color: #f5f5f5;
+  border-radius: 3rem;
+  font-size: 1rem;
+}
+#books #booksContainer #cardsContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#books #booksContainer #cardsContainer #bookCard {
+  border-radius: 20px;
+  width: 24%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+#books #booksContainer #cardsContainer #bookCard #coverContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#books #booksContainer #cardsContainer #bookCard #coverContainer #cover {
+  width: 60%;
+}
+#books #booksContainer #cardsContainer #bookCard #title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #d55249;
+  text-shadow: 1px 1px 1px #050505;
+}
+#books #booksContainer #cardsContainer #bookCard p {
+  text-align: center;
+  padding-bottom: 0.5rem;
+}/*# sourceMappingURL=style.css.map */
