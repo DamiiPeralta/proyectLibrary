@@ -7,9 +7,6 @@ const getBooksControllers = async (req, res) => {
   const books = await getBooksService();
   res.status(200).json(books);
 };
-const book : String = 'book';
-const contador :  Number = 1;
-
 const postBookController = async (req, res) => {
   try {
     const bookData = req.body;
