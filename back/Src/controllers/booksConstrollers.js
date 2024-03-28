@@ -7,16 +7,25 @@ const getBooksControllers = async (req, res) => {
   const books = await getBooksService();
   res.status(200).json(books);
 };
+
 const postBookController = async (req, res) => {
   try {
     const bookData = req.body;
-    console.log("Datos recibidos", bookData);
+    console.log("Datos recibidos: ", bookData);
+
     await postBookService(bookData);
-    res.status(201).json({ error: false, data: bookData });
+    res.status(201).send({
+      message: "Libro creado excelentemente!",
+    });
   } catch (error) {
-    console.log("Error al procesar la solicitud: ", error);
-    res.status(500).send({ message: "Error al procesar la solicitud" });
+    console.log("Error al postear libro: ", error);
+    res.status(500).send({
+      message: "Error al POSTEAR el libro",
+    });
   }
 };
 
-module.exports = { getBooksControllers, postBookController };
+module.exports = {
+  getBooksControllers,
+  postBookController,
+};
