@@ -31,12 +31,12 @@ iframe,
 embed,
 object,
 video,
-input[type=image],
-input[type=video],
-input[type=embed],
-object[type=image],
-object[type=video],
-object[type=embed] {
+input[type="image"],
+input[type="video"],
+input[type="embed"],
+object[type="image"],
+object[type="video"],
+object[type="embed"] {
   width: 100%;
 }
 
@@ -301,7 +301,13 @@ footer #socialMedia a i {
 #formAdd #formBook #formAddContainer #formRight #checkboxContainer .checkGroup {
   width: 50%;
 }
-#formAdd #formBook #formAddContainer #formRight #checkboxContainer .checkGroup span {
+#formAdd
+  #formBook
+  #formAddContainer
+  #formRight
+  #checkboxContainer
+  .checkGroup
+  span {
   font-size: 1rem;
 }
 #formAdd #formBook #formAddContainer #formRight #lastItem {
@@ -341,6 +347,7 @@ footer #socialMedia a i {
 }
 
 #modalBook {
+  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -474,8 +481,18 @@ footer #socialMedia a i {
   text-align: center;
   margin-bottom: 0.5rem;
 }
-#reservation #reservationContainer #reservationForm #formReservation label input,
-#reservation #reservationContainer #reservationForm #formReservation label textarea {
+#reservation
+  #reservationContainer
+  #reservationForm
+  #formReservation
+  label
+  input,
+#reservation
+  #reservationContainer
+  #reservationForm
+  #formReservation
+  label
+  textarea {
   width: 70%;
   background-color: #f9d2d0;
   padding: 0.5rem 1rem;
@@ -495,7 +512,11 @@ footer #socialMedia a i {
   font-weight: 800;
   border: 1px solid #d55249;
 }
-#reservation #reservationContainer #reservationForm #formReservation button:hover {
+#reservation
+  #reservationContainer
+  #reservationForm
+  #formReservation
+  button:hover {
   background-color: #d55249;
   color: #f9d2d0;
 }
@@ -503,4 +524,4 @@ footer #socialMedia a i {
   width: 30%;
   align-self: center;
   border-left: 1px solid #d55249;
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
