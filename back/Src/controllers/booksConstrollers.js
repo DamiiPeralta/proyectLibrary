@@ -11,7 +11,7 @@ const postBookController = async (req, res) => {
   try {
     const bookData = req.body;
     console.log("Datos recibidos", bookData);
-    await postBooksService(bookData);
+    await postBookService(bookData);
     res.status(201).json({ error: false, data: bookData });
   } catch (error) {
     console.log("Error al procesar la solicitud: ", error);
