@@ -9,6 +9,16 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./scripts/clearForm.js":
+/*!******************************!*\
+  !*** ./scripts/clearForm.js ***!
+  \******************************/
+/***/ ((module) => {
+
+eval("const clear = () => {\r\n  document.getElementById(\"titleForm\").value = \"\";\r\n  document.getElementById(\"yearForm\").value = \"\";\r\n  document.getElementById(\"authorForm\").value = \"\";\r\n  document.getElementById(\"publisherForm\").value = \"\";\r\n  document.getElementById(\"coverForm\").value = \"\";\r\n};\r\n\r\nmodule.exports = clear;\r\n\n\n//# sourceURL=webpack://front/./scripts/clearForm.js?");
+
+/***/ }),
+
 /***/ "./scripts/createBook.js":
 /*!*******************************!*\
   !*** ./scripts/createBook.js ***!
@@ -19,13 +29,23 @@ eval("const createBook = ({}) => {\r\n  const book = document.createElement(\"di
 
 /***/ }),
 
+/***/ "./scripts/get.js":
+/*!************************!*\
+  !*** ./scripts/get.js ***!
+  \************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("const axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\nconst render = __webpack_require__(/*! ./render */ \"./scripts/render.js\");\r\n\r\nconst get = async () => {\r\n  try {\r\n    const { data } = await axios(\"http://localhost:3000/libros\");\r\n    render(data);\r\n  } catch (error) {\r\n    alert(\"error al solicitar los libros\");\r\n  }\r\n};\r\n\r\nmodule.exports = get;\r\n\n\n//# sourceURL=webpack://front/./scripts/get.js?");
+
+/***/ }),
+
 /***/ "./scripts/index.js":
 /*!**************************!*\
   !*** ./scripts/index.js ***!
   \**************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\nconst render = __webpack_require__(/*! ./render */ \"./scripts/render.js\");\r\n__webpack_require__(/*! ./navBar */ \"./scripts/navBar.js\");\r\n__webpack_require__(/*! ./view */ \"./scripts/view.js\");\r\n\r\nconst get = async () => {\r\n  try {\r\n    const { data } = await axios(\"http://localhost:3000/libros\");\r\n    render(data);\r\n  } catch (error) {\r\n    throw new Error(alert(\"error al solicitar los libros\"));\r\n  }\r\n};\r\n\r\nget();\r\n\n\n//# sourceURL=webpack://front/./scripts/index.js?");
+eval("__webpack_require__(/*! ./navBar.js */ \"./scripts/navBar.js\");\r\nconst clear = __webpack_require__(/*! ./clearForm */ \"./scripts/clearForm.js\");\r\nconst post = __webpack_require__(/*! ./post.js */ \"./scripts/post.js\");\r\n\r\nconst submit = () => {\r\n  const title = document.getElementById(\"titleForm\")?.value;\r\n  const year = document.getElementById(\"yearForm\")?.value;\r\n  const author = document.getElementById(\"authorForm\")?.value;\r\n  const publisher = document.getElementById(\"publisherForm\")?.value;\r\n  const cover = document.getElementById(\"coverForm\")?.value;\r\n  const genre = [\"accion\", \"qsy\"];\r\n  if (!title || !year || !author || !publisher || !cover) {\r\n    return alert(\"Debes completar todos los datos para continuar\");\r\n  } else post({ title, year, author, publisher, genre, cover });\r\n  clear();\r\n};\r\n\r\ndocument.getElementById(\"submit\").addEventListener(\"click\", (event) => {\r\n  event.preventDefault();\r\n  submit();\r\n});\r\n\r\ndocument.getElementById(\"reset\")?.addEventListener(\"click\", (event) => {\r\n  event.preventDefault();\r\n  clear();\r\n});\r\n\n\n//# sourceURL=webpack://front/./scripts/index.js?");
 
 /***/ }),
 
@@ -33,9 +53,19 @@ eval("const axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist
 /*!***************************!*\
   !*** ./scripts/navBar.js ***!
   \***************************/
-/***/ ((module) => {
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const explorar = document\r\n  .getElementById(\"btnExplorar\")\r\n  .addEventListener(\"click\", () => {\r\n    document.getElementById(\"books\").style.display = \"block\";\r\n    document.getElementById(\"formAdd\").style.display = \"none\";\r\n    document.getElementById(\"reservation\").style.display = \"none\";\r\n  });\r\n\r\nconst agregar = document\r\n  .getElementById(\"btnAgregar\")\r\n  .addEventListener(\"click\", () => {\r\n    document.getElementById(\"formAdd\").style.display = \"flex\";\r\n    document.getElementById(\"reservation\").style.display = \"none\";\r\n    document.getElementById(\"books\").style.display = \"none\";\r\n  });\r\n\r\nconst reservar = document\r\n  .getElementById(\"btnReserva\")\r\n  .addEventListener(\"click\", () => {\r\n    document.getElementById(\"reservation\").style.display = \"block\";\r\n    document.getElementById(\"formAdd\").style.display = \"none\";\r\n    document.getElementById(\"books\").style.display = \"none\";\r\n  });\r\nmodule.exports = { explorar, agregar, reservar };\r\n\n\n//# sourceURL=webpack://front/./scripts/navBar.js?");
+eval("const get = __webpack_require__(/*! ./get */ \"./scripts/get.js\");\r\n\r\ndocument.getElementById(\"btnExplorar\")?.addEventListener(\"click\", () => {\r\n  document.getElementById(\"books\").style.display = \"block\";\r\n  document.getElementById(\"formAdd\").style.display = \"none\";\r\n  document.getElementById(\"reservation\").style.display = \"none\";\r\n  get();\r\n});\r\n\r\ndocument.getElementById(\"btnAgregar\")?.addEventListener(\"click\", () => {\r\n  document.getElementById(\"formAdd\").style.display = \"flex\";\r\n  document.getElementById(\"reservation\").style.display = \"none\";\r\n  document.getElementById(\"books\").style.display = \"none\";\r\n});\r\ndocument.getElementById(\"btnReserva\")?.addEventListener(\"click\", () => {\r\n  document.getElementById(\"reservation\").style.display = \"block\";\r\n  document.getElementById(\"formAdd\").style.display = \"none\";\r\n  document.getElementById(\"books\").style.display = \"none\";\r\n});\r\n\n\n//# sourceURL=webpack://front/./scripts/navBar.js?");
+
+/***/ }),
+
+/***/ "./scripts/post.js":
+/*!*************************!*\
+  !*** ./scripts/post.js ***!
+  \*************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("const axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\n\r\nconst post = async (obj) => {\r\n  try {\r\n    await axios.post(\"http://localhost:3000/libros\", obj);\r\n    alert(\"post realizado\");\r\n  } catch (error) {\r\n    alert(\"error al crear\");\r\n  }\r\n};\r\n\r\nmodule.exports = post;\r\n\n\n//# sourceURL=webpack://front/./scripts/post.js?");
 
 /***/ }),
 
@@ -46,16 +76,6 @@ eval("const explorar = document\r\n  .getElementById(\"btnExplorar\")\r\n  .addE
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 eval("const createBook = __webpack_require__(/*! ./createBook */ \"./scripts/createBook.js\");\r\n\r\nconst content = document.getElementById(\"\");\r\n\r\nconst render = (arr) =>\r\n  arr.forEach((obj) => {\r\n    const book = createBook(obj);\r\n    content.appendChild(book);\r\n  });\r\n\r\nmodule.exports = render;\r\n\n\n//# sourceURL=webpack://front/./scripts/render.js?");
-
-/***/ }),
-
-/***/ "./scripts/view.js":
-/*!*************************!*\
-  !*** ./scripts/view.js ***!
-  \*************************/
-/***/ (() => {
-
-eval("const btnView = document.getElementById(\"openModal\");\r\n\r\nbtnView.addEventListener(\"click\", () => {\r\n  document.getElementById(\"modalBook\").style.display = \"block\";\r\n});\r\n\n\n//# sourceURL=webpack://front/./scripts/view.js?");
 
 /***/ }),
 
