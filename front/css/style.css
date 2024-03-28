@@ -341,7 +341,6 @@ footer #socialMedia a i {
 }
 
 #modalBook {
-  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -353,7 +352,6 @@ footer #socialMedia a i {
 #modalBook #modalContainer {
   width: 80%;
   margin: 0 auto;
-  margin-top: 15%;
   background-color: #fbf3ef;
   padding: 2rem;
   display: flex;

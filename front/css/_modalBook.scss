@@ -1,5 +1,4 @@
 #modalBook {
-    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -10,7 +9,6 @@
     #modalContainer {
         width: 80%;
         margin: 0 auto;
-        margin-top: 15%;
         background-color: $beige;
         padding: 2rem;
         display: flex;
