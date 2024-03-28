@@ -112,9 +112,26 @@ header nav ul li a {
   color: #050505;
 }
 
+footer {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+footer #socialMedia {
+  width: 40%;
+}
+footer #socialMedia a {
+  font-size: 3rem;
+}
+footer #socialMedia a i {
+  color: #2b4d84;
+}
+
 #home {
   width: 100%;
-  display: none;
+  height: 70vh;
 }
 #home article {
   height: 75vh;
@@ -145,6 +162,7 @@ header nav ul li a {
 
 #books {
   width: 100vw;
+  display: none;
 }
 #books #booksContainer {
   width: 85%;
@@ -224,6 +242,7 @@ header nav ul li a {
 
 #formAdd {
   width: 100%;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -396,4 +415,94 @@ header nav ul li a {
 }
 #modalBook #modalContainer #infoBook p {
   margin-bottom: 1rem;
+}
+
+#reservation {
+  display: none;
+  width: 100%;
+  height: 65vh;
+}
+#reservation #reservationContainer {
+  width: 80%;
+  margin: 3rem auto;
+  padding-bottom: 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+#reservation #reservationContainer #reservationIntructions {
+  width: 30%;
+}
+#reservation #reservationContainer #reservationIntructions h2 {
+  color: #2b4d84;
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 2rem;
+  margin-top: 0;
+}
+#reservation #reservationContainer #reservationIntructions ul li {
+  margin-bottom: 0.5rem;
+}
+#reservation #reservationContainer #reservationIntructions ul li i {
+  color: #236b68;
+  margin-right: 0.5rem;
+}
+#reservation #reservationContainer #reservationForm {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#reservation #reservationContainer #reservationForm span {
+  font-style: italic;
+  text-align: center;
+}
+#reservation #reservationContainer #reservationForm #titleBookReserved {
+  font-family: "Laila", serif;
+  font-size: 1.5rem;
+  color: #d55249;
+  text-shadow: 2px 2px 2px #f9d2d0;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+#reservation #reservationContainer #reservationForm #formReservation {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#reservation #reservationContainer #reservationForm #formReservation label {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+#reservation #reservationContainer #reservationForm #formReservation label input,
+#reservation #reservationContainer #reservationForm #formReservation label textarea {
+  width: 70%;
+  background-color: #f9d2d0;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  border: 1px solid #d55249;
+  color: #d55249;
+  font-size: 1rem;
+  font-weight: 700;
+}
+#reservation #reservationContainer #reservationForm #formReservation button {
+  background-color: #f9d2d0;
+  color: #d55249;
+  border-radius: 15px;
+  width: 25%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 800;
+  border: 1px solid #d55249;
+}
+#reservation #reservationContainer #reservationForm #formReservation button:hover {
+  background-color: #d55249;
+  color: #f9d2d0;
+}
+#reservation #reservationContainer img {
+  width: 30%;
+  align-self: center;
+  border-left: 1px solid #d55249;
 }/*# sourceMappingURL=style.css.map */

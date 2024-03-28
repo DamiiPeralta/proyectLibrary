@@ -1,0 +1,91 @@
+#reservation {
+    display: none;
+    width: 100%;
+    height: 65vh;
+    #reservationContainer {
+        width: 80%;
+        margin: 3rem auto;
+        padding-bottom: 3rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        #reservationIntructions {
+            width: 30%;
+            h2 {
+                color: $blue;
+                font-size: 2rem;
+                font-weight: 900;
+                margin: 2rem;
+                margin-top: 0;
+            }
+            ul {
+                li {
+                    margin-bottom: 0.5rem;
+                    i {
+                        color: $green;
+                        margin-right: 0.5rem;
+                    }
+                }
+            }
+        }
+        #reservationForm {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            span {
+                font-style: italic;
+                text-align: center;
+            }
+            #titleBookReserved {
+                font-family: $titles;
+                font-size: 1.5rem;
+                color: $coral;
+                text-shadow: 2px 2px 2px $rose;
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+            #formReservation {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                label {
+                    width: 100%;
+                    text-align: center;
+                    margin-bottom: 0.5rem;
+                    input,
+                    textarea {
+                        width: 70%;
+                        background-color: $rose;
+                        padding: 0.5rem 1rem;
+                        border-radius: 15px;
+                        border: 1px solid $coral;
+                        color: $coral;
+                        font-size: 1rem;
+                        font-weight: 700;
+                    }
+                }
+                button {
+                    background-color: $rose;
+                    color: $coral;
+                    border-radius: 15px;
+                    width: 25%;
+                    padding: 0.5rem 1rem;
+                    font-size: 1rem;
+                    font-weight: 800;
+                    border: 1px solid $coral;
+                }
+                button:hover {
+                    background-color: $coral;
+                    color: $rose;
+                }
+            }
+        }
+        img {
+            width: 30%;
+            align-self: center;
+            border-left: 1px solid $coral;
+        }
+    }
+}

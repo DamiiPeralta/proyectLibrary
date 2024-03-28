@@ -19,13 +19,13 @@
                         <a href="#home">Inicio</a>
                     </li>
                     <li>
-                        <a href="#books">Explorá</a>
+                        <a href="#books">Explora</a>
                     </li>
                     <li>
-                        <a href="#formAdd">Agregá</a>
+                        <a href="#formAdd">Agrega</a>
                     </li>
                     <li>
-                        <a href="#formReservation"> Reservá</a>
+                        <a href="#reservation"> Reserva</a>
                     </li>
                 </ul>
             </nav>
@@ -346,9 +346,6 @@
                     </div>
                 </form>
             </section>
-            <section id="formReservation">
-                <article id="formReservationContainer"></article>
-            </section>
             <section id="modalBook">
                 <article id="modalContainer">
                     <div id="imgAndButton">
@@ -380,10 +377,80 @@
                     </div>
                 </article>
             </section>
+            <section id="reservation">
+                <article id="reservationContainer">
+                    <div id="reservationIntructions">
+                        <h2>¿Cómo Reservar?</h2>
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-check"></i>Explora nuestro
+                                repositorio de libros.
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-check"></i>Busca el libro
+                                que deseas reservar.
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-check"></i>Haz clic en
+                                "Ver más".
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-check"></i>Corrobora que
+                                sea el libro que buscas.
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-check"></i>Haz clic en
+                                boton reservar.
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-check"></i>Llena tus
+                                datos.
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-check"></i>¡Listo! Pronto
+                                recibirás un email con la confirmación de tu
+                                reserva y podrás buscar tu libro en alguno de
+                                nuestros puntos.
+                            </li>
+                        </ul>
+                    </div>
+                    <img
+                        src="./assets/img/undraw_reading_time_re_phf7.svg"
+                        alt="chica leyendo en sofa"
+                    />
+                    <div id="reservationForm">
+                        <span> Deseas reservar el libro:</span>
+                        <h3 id="titleBookReserved">Cien años de soledad</h3>
+                        <form action="#" method="post" id="formReservation">
+                            <label for="name"
+                                >Nombre y Apellido: <br />
+                                <input type="text" id="name" name="name"
+                            /></label>
+                            <label for="email"
+                                >Correo electrónico: <br />
+                                <input type="email" id="email" name="email"
+                            /></label>
+                            <label for="email"
+                                >Si tienes alguna consulta, duda o sugerencia,
+                                dejanos saber: <br />
+                                <textarea
+                                    name="message"
+                                    id="message"
+                                    rows="3"
+                                    autocomplete="off"
+                                ></textarea>
+                            </label>
+                            <button id="submitReservation">Enviar</button>
+                        </form>
+                    </div>
+                </article>
+            </section>
         </main>
         <footer>
             <div id="socialMedia">
-                <a href="#">Github</a>
+                <a href="https://github.com/DamiiPeralta/proyectLibrary">
+                    <i class="fa-brands fa-github"></i
+                ></a>
             </div>
             <div id="license">
                 &copy; 2024 DamiiPeralta. Todos los Derechos Reservados.
