@@ -55,7 +55,7 @@
         __webpack_require__
       ) => {
         eval(
-          'const axios = __webpack_require__(/*! axios */ "./node_modules/axios/dist/browser/axios.cjs");\r\nconst render = __webpack_require__(/*! ./render */ "./scripts/render.js");\r\n__webpack_require__(/*! ./navBar */ "./scripts/navBar.js");\r\n__webpack_require__(/*! ./view */ "./scripts/view.js");\r\n\r\nconst get = async () => {\r\n  try {\r\n    const { data } = await axios("http://localhost:3000/libros");\r\n    render(data);\r\n  } catch (error) {\r\n    throw new Error(alert("error al solicitar los libros"));\r\n  }\r\n};\r\n\r\nget();\r\n\n\n//# sourceURL=webpack://front/./scripts/index.js?'
+          '__webpack_require__(/*! ./navBar.js */ "./scripts/navBar.js");\r\nconst clear = __webpack_require__(/*! ./clearForm */ "./scripts/clearForm.js");\r\nconst post = __webpack_require__(/*! ./post.js */ "./scripts/post.js");\r\n\r\nconst submit = () => {\r\n  const title = document.getElementById("titleForm")?.value;\r\n  const year = document.getElementById("yearForm")?.value;\r\n  const author = document.getElementById("authorForm")?.value;\r\n  const publisher = document.getElementById("publisherForm")?.value;\r\n  const cover = document.getElementById("coverForm")?.value;\r\n  const genre = ["accion", "qsy"];\r\n  if (!title || !year || !author || !publisher || !cover) {\r\n    return alert("Debes completar todos los datos para continuar");\r\n  } else post({ title, year, author, publisher, genre, cover });\r\n  clear();\r\n};\r\n\r\ndocument.getElementById("submit").addEventListener("click", (event) => {\r\n  event.preventDefault();\r\n  submit();\r\n});\r\n\r\ndocument.getElementById("reset")?.addEventListener("click", (event) => {\r\n  event.preventDefault();\r\n  clear();\r\n});\r\n\n\n//# sourceURL=webpack://front/./scripts/index.js?'
         );
 
         /***/
@@ -96,18 +96,6 @@
       /***/ (module, __unused_webpack_exports, __webpack_require__) => {
         eval(
           'const createBook = __webpack_require__(/*! ./createBook */ "./scripts/createBook.js");\r\n\r\nconst content = document.getElementById("");\r\n\r\nconst render = (arr) =>\r\n  arr.forEach((obj) => {\r\n    const book = createBook(obj);\r\n    content.appendChild(book);\r\n  });\r\n\r\nmodule.exports = render;\r\n\n\n//# sourceURL=webpack://front/./scripts/render.js?'
-        );
-
-        /***/
-      },
-
-    /***/ "./scripts/view.js":
-      /*!*************************!*\
-  !*** ./scripts/view.js ***!
-  \*************************/
-      /***/ () => {
-        eval(
-          'const btnView = document.getElementById("openModal");\r\n\r\nbtnView.addEventListener("click", () => {\r\n  document.getElementById("modalBook").style.display = "block";\r\n});\r\n\n\n//# sourceURL=webpack://front/./scripts/view.js?'
         );
 
         /***/
