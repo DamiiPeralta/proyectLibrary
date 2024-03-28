@@ -11,6 +11,6 @@ const booksSchema = new Schema({
     genre: { type: Array, required: true }
 });
 
-const Book = model('Book', bookSchema);
+const Book = model('Book', booksSchema);
 
 module.exports = Book;

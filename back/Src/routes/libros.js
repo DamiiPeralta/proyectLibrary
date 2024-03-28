@@ -1,10 +1,10 @@
 const {Router} = require('express')
-const {getBook, postBook} = require('../controllers/bookControllers')
+const {getBooksControllers, postBookController} = require('../controllers/booksConstrollers')
 const validateBook = require('../middlewares/validarLibro')
 
-const books=router()
+const books=Router()
 
-books.get('/', getBook)
-books.post('/', validateBook, postBook)
+books.get('/', getBooksControllers)
+books.post('/', validateBook, postBookController)
 
 module.exports = books
