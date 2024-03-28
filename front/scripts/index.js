@@ -1,5 +1,6 @@
 const axios = require("axios");
 const render = require("./render");
+const { dataToGenre } = require("./renderGenre");
 require("./navBar");
 require("./view");
 
@@ -13,3 +14,9 @@ const get = async () => {
 };
 
 get();
+
+const sampleGenres= ["Novela","Romance","Ficción","Fantasía","Gastronomía","Arte","Aventura", "Terror","Poesía","Autoayuda","Psicología","Finanzas"]
+
+window.onload = () =>{
+  dataToGenre(sampleGenres)
+};

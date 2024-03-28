@@ -25,7 +25,7 @@ eval("const createBook = ({}) => {\r\n  const book = document.createElement(\"di
   \**************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\nconst render = __webpack_require__(/*! ./render */ \"./scripts/render.js\");\r\n__webpack_require__(/*! ./navBar */ \"./scripts/navBar.js\");\r\n__webpack_require__(/*! ./view */ \"./scripts/view.js\");\r\n\r\nconst get = async () => {\r\n  try {\r\n    const { data } = await axios(\"http://localhost:3000/libros\");\r\n    render(data);\r\n  } catch (error) {\r\n    throw new Error(alert(\"error al solicitar los libros\"));\r\n  }\r\n};\r\n\r\nget();\r\n\n\n//# sourceURL=webpack://front/./scripts/index.js?");
+eval("const axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\nconst render = __webpack_require__(/*! ./render */ \"./scripts/render.js\");\r\nconst { dataToGenre } = __webpack_require__(/*! ./renderGenre */ \"./scripts/renderGenre.js\");\r\n__webpack_require__(/*! ./navBar */ \"./scripts/navBar.js\");\r\n__webpack_require__(/*! ./view */ \"./scripts/view.js\");\r\n\r\nconst get = async () => {\r\n  try {\r\n    const { data } = await axios(\"http://localhost:3000/libros\");\r\n    render(data);\r\n  } catch (error) {\r\n    alert(\"error al solicitar los libros\");\r\n  }\r\n};\r\n\r\nget();\r\n\r\nconst sampleGenres= [\"Novela\",\"Romance\",\"Ficción\",\"Fantasía\",\"Gastronomía\",\"Arte\",\"Aventura\", \"Terror\",\"Poesía\",\"Autoayuda\",\"Psicología\",\"Finanzas\"]\r\n\r\nwindow.onload = () =>{\r\n  dataToGenre(sampleGenres)\r\n};\n\n//# sourceURL=webpack://front/./scripts/index.js?");
 
 /***/ }),
 
@@ -46,6 +46,16 @@ eval("const explorar = document\r\n  .getElementById(\"btnExplorar\")\r\n  .addE
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 eval("const createBook = __webpack_require__(/*! ./createBook */ \"./scripts/createBook.js\");\r\n\r\nconst content = document.getElementById(\"\");\r\n\r\nconst render = (arr) =>\r\n  arr.forEach((obj) => {\r\n    const book = createBook(obj);\r\n    content.appendChild(book);\r\n  });\r\n\r\nmodule.exports = render;\r\n\n\n//# sourceURL=webpack://front/./scripts/render.js?");
+
+/***/ }),
+
+/***/ "./scripts/renderGenre.js":
+/*!********************************!*\
+  !*** ./scripts/renderGenre.js ***!
+  \********************************/
+/***/ ((module) => {
+
+eval("/* \r\n<div class=\"checkGroup\"> contenedor de todos los generos, aca voy a vaciar y appendear los nuevos.\r\n<div>contenedor de un genero, esto voy a renderizar\r\n    <input \r\n    type=\"checkbox\"\r\n    name=\"genre[]\"\r\n    id=\"idGenero-nombreMinuscula\"\r\n    value=\"valorGenero-NombreMayuscula\"\r\n    />\r\n    <label for=\"valorGenero\">\r\n    <span>ValorGenero</span>\r\n    </label>\r\n</div>\r\n\r\n*/\r\n\r\nconst arrayGenre= [\"Novela\",\"Romance\",\"Sci-fi\",\"Arte\",\"Drama\",\"Terror\",\"Aventura\"]\r\n\r\nfunction renderGenre(genre){\r\n    const divGenre = document.createElement('div');\r\n    /* divGenre.classList.add('genre') */\r\n    const id =  genre.toLowerCase();\r\n    divGenre.innerHTML = `\r\n    <div>\r\n        <input\r\n        type=\"checkbox\"\r\n        name=\"genre[]\"\r\n        id=\"${id}\"\r\n        value=\"${genre}\"\r\n        />\r\n        <label for=\"${genre}\"><span>${genre}</span></label>\r\n    </div>\r\n    `\r\n    console.log('El genero se renderizó')\r\n    return divGenre;\r\n};\r\n\r\nfunction dataToGenre(arrayGenre) {\r\n    console.log('')\r\n    const container = document.getElementById('checkboxContainer');\r\n    container.innerHTML=``;\r\n    const data = arrayGenre;\r\n    const genres = data.map(renderGenre);\r\n    for (let i = 0; i < genres.length; i+=2) {\r\n        const divCheckGroup = document.createElement( 'div' );\r\n        divCheckGroup.classList.add(\"checkGroup\");\r\n        divCheckGroup.appendChild(genres[i])\r\n        divCheckGroup.appendChild(genres[i + 1])\r\n        container.appendChild(divCheckGroup)\r\n    }\r\n    console.log('los generos se renderizaron y appendearon')\r\n};\r\n\r\n/* \r\nconsole.log('Antes del onload')\r\nwindow.onload = () =>{\r\n  console.log('Se ejecuto el onload')\r\n  dataToGenre(sampleGenres)\r\n}; */\r\n\r\nmodule.exports={dataToGenre}\r\n\n\n//# sourceURL=webpack://front/./scripts/renderGenre.js?");
 
 /***/ }),
 
