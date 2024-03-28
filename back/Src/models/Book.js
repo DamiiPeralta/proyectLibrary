@@ -13,7 +13,7 @@ const booksSchema = new Schema({
     author: { type: String},
     publisher: { type: String},
     genre: { type: [String]},
-    conver: { type: String}
+    cover: { type: String}
 });
 
 const Book = model('Book', booksSchema);
