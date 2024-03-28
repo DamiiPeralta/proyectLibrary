@@ -1,6 +1,6 @@
 const createBook = require("./createBook");
 
-const content = document.getElementById("");
+const content = document.getElementById("cardsContainer");
 
 const render = (arr) =>
   arr.forEach((obj) => {
