@@ -1,0 +1,76 @@
+#modalBook {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($black, $alpha: 0.3);
+    #modalContainer {
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 15%;
+        background-color: $beige;
+        padding: 2rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        box-shadow: -2px 1px 29px 11px rgba(0, 0, 0, 0.53);
+        border-radius: 25px;
+        #imgAndButton {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            img {
+                width: 80%;
+                margin-bottom: 8rem;
+            }
+            button {
+                width: 30%;
+                padding: 0.5rem 1rem;
+                border-radius: 15px;
+                background-color: inherit;
+                border: 1px solid $green;
+                color: $green;
+                font-weight: 700;
+                font-size: 1rem;
+            }
+            button:hover {
+                color: white;
+                background-color: $green;
+            }
+        }
+        #infoBook {
+            width: 50%;
+            margin-left: 5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            #titleAndCover {
+                display: flex;
+                margin-bottom: 2rem;
+                .coverBookModal {
+                    width: 25%;
+                }
+                .titleBookModal {
+                    font-size: 2.5rem;
+                    align-self: center;
+                    margin-left: 1rem;
+                    color: $green;
+                    font-weight: 900;
+                }
+            }
+            h5 {
+                font-size: 1.1rem;
+                color: $coral;
+                font-weight: 700;
+            }
+            p {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}

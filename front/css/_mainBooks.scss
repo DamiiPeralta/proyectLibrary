@@ -1,6 +1,5 @@
 #books {
     width: 100vw;
-    display: none;
     #booksContainer {
         width: 85%;
         margin: 0 auto;
@@ -21,6 +20,7 @@
                 margin-right: 1rem;
                 font-size: 1rem;
                 border: 1px solid $coral;
+                background-color: $rose;
             }
             button {
                 width: 3rem;
@@ -58,6 +58,19 @@
                 p {
                     text-align: center;
                     padding-bottom: 0.5rem;
+                }
+                button {
+                    border-radius: 15px;
+                    padding: 0.5rem 1rem;
+                    border: 1px solid $coral;
+                    color: $coral;
+                    font-weight: 700;
+                    background-color: inherit;
+                    cursor: pointer;
+                }
+                button:hover {
+                    background-color: $coral;
+                    color: $white;
                 }
             }
         }
