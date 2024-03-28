@@ -14,4 +14,5 @@ app.use(express.json()); //Este middleware se utiliza para transforma datos en f
 
 app.use(router)
 
+
 module.exports = { app, PORT };

@@ -1,15 +1,17 @@
 const booksValidation = require('../utils/validations/booksValidations');
+
 function bookMiddleware(req, res, next){
-    const { name, writer, published, poster, pages, rate, genre } = req.body
+    
+    const { title,year,autor,publisher,genre,conver } = req.body
 
     const errorObject = booksValidation({
-        name,
-        writer,
-        published,
-        poster,
-        pages,
-        rate,
-        genre
+        title,
+        year,
+        autor,
+        publisher,
+        genre,
+        conver
+
     });
     if (errorObject.error){
         next(errorObject);

@@ -1,10 +1,14 @@
-const {Router} = require('express')
-const {getBooksControllers, postBookController} = require('../controllers/booksConstrollers')
-const validateBook = require('../middlewares/validarLibro')
+const { Router } = require("express");
+const {
+  getBooksControllers,
+  postBookController,
+} = require("../controllers/booksConstrollers");
+// const validateBook = require("../middlewares/validarLibro");
 
-const books=Router()
+const books = Router();
 
-books.get('/', getBooksControllers)
-books.post('/', validateBook, postBookController)
+books.get("/", getBooksControllers);
+// books.post('/', validateBook, postBookController)
+books.post("/", postBookController);
 
-module.exports = books
+module.exports = books;
