@@ -15,7 +15,7 @@
   \******************************/
 /***/ ((module) => {
 
-eval("const clear = () => {\r\n  document.getElementById(\"titleForm\").value = \"\";\r\n  document.getElementById(\"yearForm\").value = \"\";\r\n  document.getElementById(\"authorForm\").value = \"\";\r\n  document.getElementById(\"publisherForm\").value = \"\";\r\n  document.getElementById(\"coverForm\").value = \"\";\r\n};\r\n\r\nmodule.exports = clear;\r\n\n\n//# sourceURL=webpack://front/./scripts/clearForm.js?");
+eval("const clear = () => {\r\n  document.getElementById(\"titleForm\").value = \"\";\r\n  document.getElementById(\"yearForm\").value = \"\";\r\n  document.getElementById(\"authorForm\").value = \"\";\r\n  document.getElementById(\"publisherForm\").value = \"\";\r\n  document.getElementById(\"coverForm\").value = \"\";\r\n  const checkboxes = document.querySelectorAll('input[name=\"genre[]\"]:checked');\r\n  checkboxes.forEach((checkbox) => {\r\n    checkbox.checked = false;\r\n  });\r\n};\r\n\r\nmodule.exports = clear;\r\n\n\n//# sourceURL=webpack://front/./scripts/clearForm.js?");
 
 /***/ }),
 
