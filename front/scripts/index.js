@@ -15,3 +15,9 @@ document.getElementById("reset")?.addEventListener("click", (event) => {
   event.preventDefault();
   clear();
 });
+
+const search = require("./search");
+document.getElementById('searchBtn').addEventListener('click', (event)=> {
+  event.preventDefault();
+  search();
+});
