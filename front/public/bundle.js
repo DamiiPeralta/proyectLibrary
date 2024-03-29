@@ -45,7 +45,7 @@ eval("const axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist
   \**************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("__webpack_require__(/*! ./navBar.js */ \"./scripts/navBar.js\");\r\nconst clear = __webpack_require__(/*! ./clearForm */ \"./scripts/clearForm.js\");\r\nconst submit = __webpack_require__(/*! ./submitForm.js */ \"./scripts/submitForm.js\");\r\n\r\ndocument.getElementById(\"submit\").addEventListener(\"click\", (event) => {\r\n  event.preventDefault();\r\n  submit();\r\n});\r\n\r\ndocument.getElementById(\"reset\")?.addEventListener(\"click\", (event) => {\r\n  event.preventDefault();\r\n  clear();\r\n});\r\n\n\n//# sourceURL=webpack://front/./scripts/index.js?");
+eval("__webpack_require__(/*! ./navBar.js */ \"./scripts/navBar.js\");\r\n__webpack_require__(/*! ./view.js */ \"./scripts/view.js\");\r\nconst clear = __webpack_require__(/*! ./clearForm */ \"./scripts/clearForm.js\");\r\nconst submit = __webpack_require__(/*! ./submitForm.js */ \"./scripts/submitForm.js\");\r\nconst get = __webpack_require__(/*! ./get */ \"./scripts/get.js\");\r\n\r\nget();\r\n\r\ndocument.getElementById(\"submit\").addEventListener(\"click\", (event) => {\r\n  event.preventDefault();\r\n  submit();\r\n});\r\n\r\ndocument.getElementById(\"reset\")?.addEventListener(\"click\", (event) => {\r\n  event.preventDefault();\r\n  clear();\r\n});\r\n\n\n//# sourceURL=webpack://front/./scripts/index.js?");
 
 /***/ }),
 
@@ -53,9 +53,9 @@ eval("__webpack_require__(/*! ./navBar.js */ \"./scripts/navBar.js\");\r\nconst 
 /*!***************************!*\
   !*** ./scripts/navBar.js ***!
   \***************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ (() => {
 
-eval("const get = __webpack_require__(/*! ./get */ \"./scripts/get.js\");\r\n\r\ndocument.getElementById(\"btnExplorar\")?.addEventListener(\"click\", () => {\r\n  document.getElementById(\"books\").style.display = \"block\";\r\n  document.getElementById(\"formAdd\").style.display = \"none\";\r\n  document.getElementById(\"reservation\").style.display = \"none\";\r\n  get();\r\n});\r\n\r\ndocument.getElementById(\"btnAgregar\")?.addEventListener(\"click\", () => {\r\n  document.getElementById(\"formAdd\").style.display = \"flex\";\r\n  document.getElementById(\"reservation\").style.display = \"none\";\r\n  document.getElementById(\"books\").style.display = \"none\";\r\n});\r\ndocument.getElementById(\"btnReserva\")?.addEventListener(\"click\", () => {\r\n  document.getElementById(\"reservation\").style.display = \"block\";\r\n  document.getElementById(\"formAdd\").style.display = \"none\";\r\n  document.getElementById(\"books\").style.display = \"none\";\r\n});\r\n\n\n//# sourceURL=webpack://front/./scripts/navBar.js?");
+eval("document.getElementById(\"btnExplorar\")?.addEventListener(\"click\", () => {\r\n  document.getElementById(\"books\").style.display = \"block\";\r\n  document.getElementById(\"formAdd\").style.display = \"none\";\r\n  document.getElementById(\"reservation\").style.display = \"none\";\r\n});\r\n\r\ndocument.getElementById(\"btnAgregar\")?.addEventListener(\"click\", () => {\r\n  document.getElementById(\"formAdd\").style.display = \"flex\";\r\n  document.getElementById(\"reservation\").style.display = \"none\";\r\n  document.getElementById(\"books\").style.display = \"none\";\r\n});\r\ndocument.getElementById(\"btnReserva\")?.addEventListener(\"click\", () => {\r\n  document.getElementById(\"reservation\").style.display = \"block\";\r\n  document.getElementById(\"formAdd\").style.display = \"none\";\r\n  document.getElementById(\"books\").style.display = \"none\";\r\n});\r\n\n\n//# sourceURL=webpack://front/./scripts/navBar.js?");
 
 /***/ }),
 
@@ -79,13 +79,33 @@ eval("const createBook = __webpack_require__(/*! ./createBook */ \"./scripts/cre
 
 /***/ }),
 
+/***/ "./scripts/renderGenre.js":
+/*!********************************!*\
+  !*** ./scripts/renderGenre.js ***!
+  \********************************/
+/***/ ((module) => {
+
+eval("/* \r\n<div class=\"checkGroup\"> contenedor de todos los generos, aca voy a vaciar y appendear los nuevos.\r\n<div>contenedor de un genero, esto voy a renderizar\r\n    <input \r\n    type=\"checkbox\"\r\n    name=\"genre[]\"\r\n    id=\"idGenero-nombreMinuscula\"\r\n    value=\"valorGenero-NombreMayuscula\"\r\n    />\r\n    <label for=\"valorGenero\">\r\n    <span>ValorGenero</span>\r\n    </label>\r\n</div>\r\n\r\n*/\r\n\r\nconst arrayGenre = [\r\n  \"Novela\",\r\n  \"Romance\",\r\n  \"Sci-fi\",\r\n  \"Arte\",\r\n  \"Drama\",\r\n  \"Terror\",\r\n  \"Aventura\",\r\n];\r\n\r\nfunction renderGenre(genre) {\r\n  const divGenre = document.createElement(\"div\");\r\n  /* divGenre.classList.add('genre') */\r\n  const id = genre.toLowerCase();\r\n  divGenre.innerHTML = `\r\n    <div>\r\n        <input\r\n        type=\"checkbox\"\r\n        name=\"genre[]\"\r\n        id=\"${id}\"\r\n        value=\"${genre}\"\r\n        />\r\n        <label for=\"${genre}\"><span>${genre}</span></label>\r\n    </div>\r\n    `;\r\n  console.log(\"El genero se renderizó\");\r\n  return divGenre;\r\n}\r\n\r\nfunction dataToGenre(arrayGenre) {\r\n  console.log(\"\");\r\n  const container = document.getElementById(\"checkboxContainer\");\r\n  container.innerHTML = ``;\r\n  const data = arrayGenre;\r\n  const genres = data.map(renderGenre);\r\n  for (let i = 0; i < genres.length; i += 2) {\r\n    const divCheckGroup = document.createElement(\"div\");\r\n    divCheckGroup.classList.add(\"checkGroup\");\r\n    divCheckGroup.appendChild(genres[i]);\r\n    divCheckGroup.appendChild(genres[i + 1]);\r\n    container.appendChild(divCheckGroup);\r\n  }\r\n  console.log(\"los generos se renderizaron y appendearon\");\r\n}\r\n\r\n/* \r\nconsole.log('Antes del onload')\r\nwindow.onload = () =>{\r\n  console.log('Se ejecuto el onload')\r\n  dataToGenre(sampleGenres)\r\n}; */\r\n\r\nmodule.exports = dataToGenre;\r\n\n\n//# sourceURL=webpack://front/./scripts/renderGenre.js?");
+
+/***/ }),
+
 /***/ "./scripts/submitForm.js":
 /*!*******************************!*\
   !*** ./scripts/submitForm.js ***!
   \*******************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const clear = __webpack_require__(/*! ./clearForm */ \"./scripts/clearForm.js\");\r\nconst post = __webpack_require__(/*! ./post.js */ \"./scripts/post.js\");\r\n\r\nconst submit = () => {\r\n  const title = document.getElementById(\"titleForm\")?.value;\r\n  const year = document.getElementById(\"yearForm\")?.value;\r\n  const author = document.getElementById(\"authorForm\")?.value;\r\n  const publisher = document.getElementById(\"publisherForm\")?.value;\r\n  const cover = document.getElementById(\"coverForm\")?.value;\r\n  const genre = [\"accion\", \"qsy\"];\r\n  if (!title || !year || !author || !publisher || !cover) {\r\n    return alert(\"Debes completar todos los datos para continuar\");\r\n  } else post({ title, year, author, publisher, genre, cover });\r\n  clear();\r\n};\r\n\r\nmodule.exports = submit;\r\n\n\n//# sourceURL=webpack://front/./scripts/submitForm.js?");
+eval("const clear = __webpack_require__(/*! ./clearForm */ \"./scripts/clearForm.js\");\r\nconst post = __webpack_require__(/*! ./post.js */ \"./scripts/post.js\");\r\nconst dataToGenre = __webpack_require__(/*! ./renderGenre.js */ \"./scripts/renderGenre.js\");\r\n\r\nconst submit = () => {\r\n  const title = document.getElementById(\"titleForm\")?.value;\r\n  const year = document.getElementById(\"yearForm\")?.value;\r\n  const author = document.getElementById(\"authorForm\")?.value;\r\n  const publisher = document.getElementById(\"publisherForm\")?.value;\r\n  const cover = document.getElementById(\"coverForm\")?.value;\r\n  const genre = dataToGenre();\r\n  if (!title || !year || !author || !publisher || !cover || !genre) {\r\n    return alert(\"Debes completar todos los datos para continuar\");\r\n  } else post({ title, year, author, publisher, genre, cover });\r\n  clear();\r\n};\r\n\r\nmodule.exports = submit;\r\n\n\n//# sourceURL=webpack://front/./scripts/submitForm.js?");
+
+/***/ }),
+
+/***/ "./scripts/view.js":
+/*!*************************!*\
+  !*** ./scripts/view.js ***!
+  \*************************/
+/***/ (() => {
+
+eval("const btnView = document.getElementById(\"openModal\");\r\n\r\nbtnView.addEventListener(\"click\", () => {\r\n  document.getElementById(\"modalBook\").style.display = \"block\";\r\n});\r\n\r\nbtnExitView = document.getElementById(\"exitView\");\r\n\r\nbtnExitView.addEventListener(\"click\", () => {\r\n  document.getElementById(\"modalBook\").style.display = \"none\";\r\n});\r\n\n\n//# sourceURL=webpack://front/./scripts/view.js?");
 
 /***/ }),
 
