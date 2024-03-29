@@ -29,6 +29,16 @@ eval("const createBook = ({ title, year, author, genre, cover, publisher }) => {
 
 /***/ }),
 
+/***/ "./scripts/genresToArray.js":
+/*!**********************************!*\
+  !*** ./scripts/genresToArray.js ***!
+  \**********************************/
+/***/ ((module) => {
+
+eval("function genresToArray() {\r\n  const checkboxes = document.querySelectorAll('input[name=\"genre[]\"]:checked');\r\n\r\n  // Inicializar un array para almacenar los generos seleccionados\r\n  const selectedGenres = [];\r\n\r\n  // Iterar sobre cada checkbox seleccionado y obtener su valor (el género)\r\n  checkboxes.forEach((checkbox) => {\r\n    selectedGenres.push(checkbox.value);\r\n  });\r\n\r\n  // Devolver el array de géneros seleccionados\r\n  return selectedGenres;\r\n}\r\n\r\nconst selectedGenres = genresToArray();\r\nconsole.log(selectedGenres);\r\nmodule.exports = genresToArray;\n\n//# sourceURL=webpack://front/./scripts/genresToArray.js?");
+
+/***/ }),
+
 /***/ "./scripts/get.js":
 /*!************************!*\
   !*** ./scripts/get.js ***!
@@ -85,7 +95,7 @@ eval("const createBook = __webpack_require__(/*! ./createBook */ \"./scripts/cre
   \*******************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const clear = __webpack_require__(/*! ./clearForm */ \"./scripts/clearForm.js\");\r\nconst post = __webpack_require__(/*! ./post.js */ \"./scripts/post.js\");\r\n\r\nconst submit = () => {\r\n  const title = document.getElementById(\"titleForm\")?.value;\r\n  const year = document.getElementById(\"yearForm\")?.value;\r\n  const author = document.getElementById(\"authorForm\")?.value;\r\n  const publisher = document.getElementById(\"publisherForm\")?.value;\r\n  const cover = document.getElementById(\"coverForm\")?.value;\r\n  const genre = [\"accion\", \"qsy\"];\r\n  if (!title || !year || !author || !publisher || !cover) {\r\n    return alert(\"Debes completar todos los datos para continuar\");\r\n  } else post({ title, year, author, publisher, genre, cover });\r\n  clear();\r\n};\r\n\r\nmodule.exports = submit;\r\n\n\n//# sourceURL=webpack://front/./scripts/submitForm.js?");
+eval("const clear = __webpack_require__(/*! ./clearForm */ \"./scripts/clearForm.js\");\r\nconst post = __webpack_require__(/*! ./post.js */ \"./scripts/post.js\");\r\nconst genresToArray = __webpack_require__(/*! ./genresToArray.js */ \"./scripts/genresToArray.js\")\r\n\r\nconst submit = () => {\r\n  const title = document.getElementById(\"titleForm\")?.value;\r\n  const year = document.getElementById(\"yearForm\")?.value;\r\n  const author = document.getElementById(\"authorForm\")?.value;\r\n  const publisher = document.getElementById(\"publisherForm\")?.value;\r\n  const cover = document.getElementById(\"coverForm\")?.value;\r\n  const genre = genresToArray();\r\n  if (!title || !year || !author || !publisher || !cover) {\r\n    return alert(\"Debes completar todos los datos para continuar\");\r\n  } else post({ title, year, author, publisher, genre, cover });\r\n  clear();\r\n};\r\n\r\nmodule.exports = submit;\r\n\n\n//# sourceURL=webpack://front/./scripts/submitForm.js?");
 
 /***/ }),
 
