@@ -35,7 +35,7 @@ eval("const createBook = ({ title, year, author, genre, cover, publisher }) => {
   \**********************************/
 /***/ ((module) => {
 
-eval("function genresToArray() {\r\n  const checkboxes = document.querySelectorAll('input[name=\"genre[]\"]:checked');\r\n\r\n  // Inicializar un array para almacenar los generos seleccionados\r\n  const selectedGenres = [];\r\n\r\n  // Iterar sobre cada checkbox seleccionado y obtener su valor (el género)\r\n  checkboxes.forEach((checkbox) => {\r\n    selectedGenres.push(checkbox.value);\r\n  });\r\n\r\n  // Devolver el array de géneros seleccionados\r\n  return selectedGenres;\r\n}\r\n\r\nconst selectedGenres = genresToArray();\r\nconsole.log(selectedGenres);\r\nmodule.exports = genresToArray;\n\n//# sourceURL=webpack://front/./scripts/genresToArray.js?");
+eval("function genresToArray() {\r\n  const checkboxes = document.querySelectorAll('input[name=\"genre[]\"]:checked');\r\n  const selectedGenres = [];\r\n  checkboxes.forEach((checkbox) => {\r\n    selectedGenres.push(checkbox.value);\r\n  });\r\n  return selectedGenres;\r\n}\r\n\r\nmodule.exports = genresToArray;\n\n//# sourceURL=webpack://front/./scripts/genresToArray.js?");
 
 /***/ }),
 
