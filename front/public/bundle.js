@@ -55,7 +55,7 @@ eval("const axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist
   \**************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("__webpack_require__(/*! ./navBar.js */ \"./scripts/navBar.js\");\r\nconst clear = __webpack_require__(/*! ./clearForm */ \"./scripts/clearForm.js\");\r\nconst submit = __webpack_require__(/*! ./submitForm.js */ \"./scripts/submitForm.js\");\r\n\r\ndocument.getElementById(\"submit\").addEventListener(\"click\", (event) => {\r\n  event.preventDefault();\r\n  submit();\r\n});\r\n\r\ndocument.getElementById(\"reset\")?.addEventListener(\"click\", (event) => {\r\n  event.preventDefault();\r\n  clear();\r\n});\r\n\n\n//# sourceURL=webpack://front/./scripts/index.js?");
+eval("__webpack_require__(/*! ./navBar.js */ \"./scripts/navBar.js\");\r\nconst clear = __webpack_require__(/*! ./clearForm */ \"./scripts/clearForm.js\");\r\nconst submit = __webpack_require__(/*! ./submitForm.js */ \"./scripts/submitForm.js\");\r\n\r\ndocument.getElementById(\"submit\").addEventListener(\"click\", (event) => {\r\n  event.preventDefault();\r\n  submit();\r\n});\r\n\r\ndocument.getElementById(\"reset\")?.addEventListener(\"click\", (event) => {\r\n  event.preventDefault();\r\n  clear();\r\n});\r\n\r\nconst search = __webpack_require__(/*! ./search */ \"./scripts/search.js\");\r\ndocument.getElementById('searchBtn').addEventListener('click', (event)=> {\r\n  event.preventDefault();\r\n  search();\r\n});\n\n//# sourceURL=webpack://front/./scripts/index.js?");
 
 /***/ }),
 
@@ -85,7 +85,17 @@ eval("const axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist
   \***************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const createBook = __webpack_require__(/*! ./createBook */ \"./scripts/createBook.js\");\r\n\r\nconst content = document.getElementById(\"cardsContainer\");\r\n\r\nconst render = (arr) =>\r\n  arr.forEach((obj) => {\r\n    const book = createBook(obj);\r\n    content.appendChild(book);\r\n  });\r\n\r\nmodule.exports = render;\r\n\n\n//# sourceURL=webpack://front/./scripts/render.js?");
+eval("const createBook = __webpack_require__(/*! ./createBook */ \"./scripts/createBook.js\");\r\n\r\nconst content = document.getElementById(\"cardsContainer\");\r\n\r\nconst render = (arr) =>{\r\n  content.innerHTML = '';\r\n  arr.forEach((obj) => {\r\n    const book = createBook(obj);\r\n    content.appendChild(book);\r\n  })};\r\n\r\nmodule.exports = render;\r\n\n\n//# sourceURL=webpack://front/./scripts/render.js?");
+
+/***/ }),
+
+/***/ "./scripts/search.js":
+/*!***************************!*\
+  !*** ./scripts/search.js ***!
+  \***************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("const axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\nconst render = __webpack_require__(/*! ./render */ \"./scripts/render.js\");\r\n\r\nfunction filterBooks(searchTerm, books) {\r\n  \r\n  if (!searchTerm || searchTerm == \"\") {\r\n    return books;\r\n  }\r\n  \r\n  let filteredBooks = [];\r\n  books.forEach(book => {\r\n    const title = book.title.toLowerCase();\r\n    const author = book.author.toLowerCase();\r\n    const genre = book.genre.map((genre) => genre.toLowerCase());\r\n    console.log('antes del if');\r\n    if(title.includes(searchTerm.toLowerCase()) ||      author.includes(searchTerm.toLowerCase()) || genre.includes(searchTerm.toLowerCase())){\r\n      console.log('en el if');\r\n      filteredBooks.push(book);\r\n      console.log('despues del push');\r\n    };\r\n\r\n  });\r\n  console.log(filteredBooks);\r\n  return filteredBooks;\r\n\r\n} \r\n\r\n\r\nconst search = async () => {\r\n  const searchTerm = document.getElementById(\"searchInput\").value;\r\n  console.log(searchTerm);\r\n  try {\r\n    const { data } = await axios(\"http://localhost:3000/libros\");\r\n    const booksToFilter = data;\r\n    const filteredBooks = filterBooks(searchTerm, booksToFilter);\r\n    //document.getElementById('cardsContainer').innerHTML='';\r\n    render(filteredBooks);\r\n    \r\n  } catch (error) {\r\n    alert(\"Error al buscar los libros\");\r\n  }\r\n};\r\n\r\n\r\n/* \r\nfunction search() {\r\n  const booksToFilter = getBooks();\r\n  console.log(\"Se esta guardando antes de buscar.\");\r\n} */\r\n\r\nmodule.exports = search;\r\n\n\n//# sourceURL=webpack://front/./scripts/search.js?");
 
 /***/ }),
 
