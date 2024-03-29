@@ -105,7 +105,7 @@ eval("const clear = __webpack_require__(/*! ./clearForm */ \"./scripts/clearForm
   \*************************/
 /***/ (() => {
 
-eval("const btnView = document.getElementById(\"openModal\");\r\n\r\nbtnView.addEventListener(\"click\", () => {\r\n  document.getElementById(\"modalBook\").style.display = \"block\";\r\n});\r\n\r\nbtnExitView = document.getElementById(\"exitView\");\r\n\r\nbtnExitView.addEventListener(\"click\", () => {\r\n  document.getElementById(\"modalBook\").style.display = \"none\";\r\n});\r\n\n\n//# sourceURL=webpack://front/./scripts/view.js?");
+eval("const btnView = document.getElementById(\"openModal\");\r\n\r\nbtnView?.addEventListener(\"click\", () => {\r\n  document.getElementById(\"modalBook\").style.display = \"block\";\r\n});\r\n\r\nbtnExitView = document.getElementById(\"exitView\");\r\n\r\nbtnExitView?.addEventListener(\"click\", () => {\r\n  document.getElementById(\"modalBook\").style.display = \"none\";\r\n});\r\n\n\n//# sourceURL=webpack://front/./scripts/view.js?");
 
 /***/ }),
 
